@@ -1,46 +1,36 @@
 import {
   Injectable,
   InternalServerErrorException,
-  Logger,
-  LoggerService,
-} from '@nestjs/common';
+  Logger } from '@nestjs/common';
 import { cities } from '../../assets/data/cities.json';
 import {
   City,
-  CityRaw,
   mapCityRawToCity,
 } from '../../../../../lib/shared/src/index';
 import { GetCitiesFilterDto } from './dto/get-cities-filter.dto';
+import { isMatchingQuery } from './cities.utils';
 
 @Injectable()
 export class CitiesService {
   private readonly logger = new Logger(CitiesService.name);
+  private readonly mappedCities: City[] = cities.map(mapCityRawToCity);
 
   getCities(filterDto: GetCitiesFilterDto): City[] {
-    try {
-      const mappedCity = cities.map((city: CityRaw) => mapCityRawToCity(city));
+    const query = filterDto?.search?.trim().toLowerCase();
 
-      if (!filterDto.search) {
-        return mappedCity;
+    try {
+      if (!query) {
+        return this.mappedCities;
       }
 
-      const query = filterDto.search?.trim().toLowerCase();
-
-      const result = mappedCity.filter(
-        (city) =>
-          city.name.toLowerCase().includes(query) ||
-          city.country.toLowerCase().includes(query) ||
-          city.continent.toLowerCase().includes(query) ||
-          city.landmarks.some((landmark) =>
-            landmark.toLowerCase().includes(query),
-          ),
-      );
-
-      return result;
+      return this.mappedCities.filter(((city:City ) => isMatchingQuery(city, query )));
     } catch (error) {
-      this.logger.error('Failed to get the cities', error);
+      this.logger.error(`Failed to get the cities with the query: "${query}"`, error);
 
       throw new InternalServerErrorException();
     }
   }
+
+
+
 }
