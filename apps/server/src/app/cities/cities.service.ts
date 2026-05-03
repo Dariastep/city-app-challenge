@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { cities } from '../../assets/data/cities.json';
-import { CityRaw } from '@lib/shared';
+import { City, CityRaw, mapCityRawToCity } from '../../../../../lib/shared/src/index';
 
 @Injectable()
 export class CitiesService {
-  getCities(): CityRaw[] {
-    return cities;
+  getCities(): City[] {
+    return cities.map((city: CityRaw) => mapCityRawToCity(city));
   }
  }
