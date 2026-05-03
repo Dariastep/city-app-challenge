@@ -15,8 +15,8 @@ export class CitiesService {
   private readonly logger = new Logger(CitiesService.name);
   private readonly mappedCities: City[] = cities.map(mapCityRawToCity);
 
-  getCities(filterDto: GetCitiesFilterDto): City[] {
-    const query = filterDto?.search?.trim().toLowerCase();
+  async getCities(filterDto: GetCitiesFilterDto): Promise<City[]> {
+    const query = filterDto?.search?.toLowerCase();
 
     try {
       if (!query) {

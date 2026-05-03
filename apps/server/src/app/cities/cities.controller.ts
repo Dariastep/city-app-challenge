@@ -9,7 +9,7 @@ export class CitiesController {
   constructor(private citiesService: CitiesService) {}
 
   @Get()
-  getAllCities(@Query() getCitiesFilterDto: GetCitiesFilterDto): City[] {
-    return this.citiesService.getCities(getCitiesFilterDto);
+  async getAllCities(@Query() getCitiesFilterDto: GetCitiesFilterDto):Promise<City[]> {
+    return await this.citiesService.getCities(getCitiesFilterDto);
   }
 }
