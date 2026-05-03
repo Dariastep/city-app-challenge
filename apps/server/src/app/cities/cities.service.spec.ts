@@ -12,7 +12,23 @@ describe('CitiesService', () => {
     service = module.get<CitiesService>(CitiesService);
   });
 
-  it('should be defined', () => {
-    expect(service).toBeDefined();
+  it('should return all cities if no search applied', async () => {
+    const result = await service.getCities({});
+    expect(result.length).toBe(8);
+  });
+
+  it('should return the cities by filtering by the city name', async () => {
+    const result = await service.getCities({search:'MUN'});
+    expect (result[0].name).toBe('Munich');
+  });
+
+  it('should return the city by its landmark', async () => {
+    const result = await service.getCities({ search: 'Sydney Opera House' });
+    expect(result[0].name).toBe('Sydney');
+  });
+
+  it('should return no results if the search parameter does not match', async () => {
+    const result = await service.getCities({ search: 'Zugspitze' });
+    expect(result).toEqual([]);
   });
 });
