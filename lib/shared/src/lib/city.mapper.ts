@@ -7,7 +7,7 @@ import { City } from './city.model';
  * @returns a formatted city object
  */
 export function mapCityRawToCity(data: CityRaw): City {
-return {
+  return {
   name: data.name,
   nameNative: data.name_native,
   country: data.country,
@@ -17,5 +17,5 @@ return {
   population: Number(data.population),
   founded: Number(data.founded),
   landmarks: data.landmarks,
-}
+  }
 }
