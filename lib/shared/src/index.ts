@@ -1,3 +1,3 @@
-export * from './lib/city-raw.model';
-export * from './lib/city.model';
-export * from './lib/city.mapper';
+export * from './lib/models/city-raw.model';
+export * from './lib/models/city.model';
+export * from './lib/models/city.mapper';
