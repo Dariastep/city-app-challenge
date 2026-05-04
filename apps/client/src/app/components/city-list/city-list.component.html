@@ -1,0 +1,18 @@
+<header class="header">
+  <div class="container">
+    <h1>Explore the Cities</h1>
+    <p>Find and explore details about your favorite cities.</p>
+  </div>
+</header>
+
+<main class="container">
+  <div class="cities-container">
+    @for (city of cities(); track city.id)  {
+      <city-card [city] ="city" />
+    } @empty {
+      <p>No cities are found.</p>
+    }
+  </div>
+</main>
+
+
