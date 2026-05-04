@@ -1,4 +1,14 @@
 @if (city(); as cityData) {
+  <header>
+    <div class="container">
+      <h1>City Details</h1>
+      <p class="header-description">
+        Learn more about the city of {{ cityData.name }} including its history, population and landmarks.
+      </p>
+    </div>
+  </header>
+
+  <main>
   <mat-card class="card-container">
     <mat-card-header>
       <mat-icon mat-card-avatar color="primary" aria-hidden="true">location_city</mat-icon>
@@ -56,6 +66,9 @@
       <button mat-flat-button color="primary" [routerLink]="['/']">Back to all cities</button>
     </mat-card-actions>
   </mat-card>
+  </main>
 } @else {
   <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  <p>Loading city details...</p>
 }
+
