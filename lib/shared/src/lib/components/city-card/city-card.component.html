@@ -1,0 +1,10 @@
+<div class="card">
+  <div class="info">
+<!--    <span class="country">{{ city.country }}</span>-->
+    <h3 class="name">{{ city.name }}</h3>
+  </div>
+
+  <button [routerLink]="['/details', city.id]" class="details-btn">
+    View Details
+  </button>
+</div>
