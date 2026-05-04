@@ -6,7 +6,7 @@ import { MatButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 
 @Component({
-  selector: 'city-card',
+  selector: 'app-city-card',
   imports: [
     RouterLink,
     MatCard,

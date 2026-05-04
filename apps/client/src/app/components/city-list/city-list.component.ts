@@ -9,7 +9,7 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { debounceTime, distinctUntilChanged, startWith, switchMap } from 'rxjs';
 
 @Component({
-  selector: 'city-list',
+  selector: 'app-city-list',
   imports: [
     CommonModule,
     CityCardComponent,

@@ -17,7 +17,7 @@
 
   <div class="cities-container">
     @for (city of cities(); track city.id)  {
-      <city-card [city] ="city" />
+      <app-city-card [city] ="city" />
     } @empty {
       <p>No cities are found.</p>
     }

@@ -16,7 +16,7 @@ import { RouterLink } from '@angular/router';
 import { MatButton } from '@angular/material/button';
 
 @Component({
-  selector: 'city-details',
+  selector: 'app-city-details',
   imports: [
     MatCardHeader,
     MatCardTitle,
