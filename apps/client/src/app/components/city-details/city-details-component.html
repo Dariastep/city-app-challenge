@@ -1,17 +1,20 @@
 @if (city(); as cityData) {
-  <header>
-    <div class="container">
-      <h1>City Details</h1>
-      <p class="header-description">
-        Learn more about the city of {{ cityData.name }} including its history, population and landmarks.
-      </p>
-    </div>
-  </header>
+<header>
+  <div class="container">
+    <h1>City Details</h1>
+    <p class="header-description">
+      Learn more about the city of {{ cityData.name }} including its history,
+      population and landmarks.
+    </p>
+  </div>
+</header>
 
-  <main>
+<main>
   <mat-card class="card-container">
     <mat-card-header>
-      <mat-icon mat-card-avatar color="primary" aria-hidden="true">location_city</mat-icon>
+      <mat-icon mat-card-avatar color="primary" aria-hidden="true"
+        >location_city</mat-icon
+      >
       <mat-card-title>{{ cityData.name }}</mat-card-title>
       <mat-card-subtitle>{{ cityData.nameNative }}</mat-card-subtitle>
     </mat-card-header>
@@ -27,21 +30,29 @@
         </mat-list-item>
 
         <mat-list-item>
-          <mat-icon matListItemIcon color="primary" aria-hidden="true">event_upcoming</mat-icon>
+          <mat-icon matListItemIcon color="primary" aria-hidden="true"
+            >event_upcoming</mat-icon
+          >
           <div matListItemTitle class="bold">Founded</div>
           <div matListItemLine>{{ cityData.founded }} year</div>
         </mat-list-item>
 
         <mat-list-item>
-          <mat-icon matListItemIcon color="primary" aria-hidden="true">groups</mat-icon>
+          <mat-icon matListItemIcon color="primary" aria-hidden="true"
+            >groups</mat-icon
+          >
           <div matListItemTitle class="bold">Total Population</div>
           <div matListItemLine>{{ cityData.population | number }} people</div>
         </mat-list-item>
 
         <mat-list-item>
-          <mat-icon matListItemIcon color="primary" aria-hidden="true">explore</mat-icon>
+          <mat-icon matListItemIcon color="primary" aria-hidden="true"
+            >explore</mat-icon
+          >
           <div matListItemTitle class="bold">Coordinates</div>
-          <div matListItemLine>{{ cityData.latitude }} / {{ cityData.longitude }}</div>
+          <div matListItemLine>
+            {{ cityData.latitude }} / {{ cityData.longitude }}
+          </div>
         </mat-list-item>
       </mat-list>
 
@@ -50,12 +61,14 @@
       <div mat-subheader class="bold">Landmarks</div>
       <mat-list dense class="list-align-center">
         @for (item of cityData.landmarks; track item) {
-          <mat-list-item>
-            <mat-icon matListItemIcon color="primary" aria-hidden="true">star_border</mat-icon>
-            <div matListItemTitle>{{ item }}</div>
-          </mat-list-item>
+        <mat-list-item>
+          <mat-icon matListItemIcon color="primary" aria-hidden="true"
+            >star_border</mat-icon
+          >
+          <div matListItemTitle>{{ item }}</div>
+        </mat-list-item>
         } @empty {
-          <div> No landmarks are shown.</div>
+        <div>No landmarks are shown.</div>
         }
       </mat-list>
     </mat-card-content>
@@ -63,12 +76,13 @@
     <mat-divider></mat-divider>
 
     <mat-card-actions align="end">
-      <button mat-flat-button color="primary" [routerLink]="['/']">Back to all cities</button>
+      <button mat-flat-button color="primary" [routerLink]="['/']">
+        Back to all cities
+      </button>
     </mat-card-actions>
   </mat-card>
-  </main>
+</main>
 } @else {
-  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-  <p>Loading city details...</p>
+<mat-progress-bar mode="indeterminate"></mat-progress-bar>
+<p>Loading city details...</p>
 }
-

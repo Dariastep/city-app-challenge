@@ -7,7 +7,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const globalPrefix = 'api';
   app.setGlobalPrefix(globalPrefix);
-  app.useGlobalPipes(new ValidationPipe( {transform: true }));
+  app.useGlobalPipes(new ValidationPipe({ transform: true }));
   app.enableCors({
     origin: 'http://localhost:4200',
   });
@@ -25,9 +25,7 @@ async function bootstrap() {
   Logger.log(
     `🚀 Application is running on: http://localhost:${port}/${globalPrefix}`,
   );
-  Logger.log(
-    `Swagger is running on: http://localhost:${port}/api-docs`,
-  );
+  Logger.log(`Swagger is running on: http://localhost:${port}/api-docs`);
 }
 
 bootstrap();

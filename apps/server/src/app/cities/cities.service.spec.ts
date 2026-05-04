@@ -18,8 +18,8 @@ describe('CitiesService', () => {
   });
 
   it('should return the cities by filtering by the city name', async () => {
-    const result = await service.getCities({search:'MUN'});
-    expect (result[0].name).toBe('Munich');
+    const result = await service.getCities({ search: 'MUN' });
+    expect(result[0].name).toBe('Munich');
   });
 
   it('should return the city by its landmark', async () => {

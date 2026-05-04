@@ -25,11 +25,13 @@ describe('CityDetails', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [CityDetailsComponent],
-      providers: [provideRouter([]),
+      providers: [
+        provideRouter([]),
         {
           provide: CityApiService,
-          useValue: { getCityById: () => of(mockedCity) }
-        }]
+          useValue: { getCityById: () => of(mockedCity) },
+        },
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(CityDetailsComponent);
@@ -54,6 +56,8 @@ describe('CityDetails', () => {
     expect(content).toContain(mockedCity.longitude.toString());
     expect(content).toContain(mockedCity.latitude.toString());
 
-    mockedCity.landmarks.forEach((landmark) => expect(content).toContain(landmark));
+    mockedCity.landmarks.forEach((landmark) =>
+      expect(content).toContain(landmark),
+    );
   });
 });

@@ -5,5 +5,8 @@
   "type": "commonjs",
   "main": "./index.cjs",
   "types": "./index.d.ts",
-  "dependencies": {}
+  "dependencies": {
+    "vitest": "4.0.9",
+    "@nx/vite": "22.7.0"
+  }
 }

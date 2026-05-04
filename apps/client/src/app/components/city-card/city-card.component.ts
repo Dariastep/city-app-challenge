@@ -1,7 +1,13 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
-import { City } from '../../../../../../lib/shared/src/lib/models/city.model';
+import { City } from '@lib/models';
 import { RouterLink } from '@angular/router';
-import { MatCard, MatCardActions, MatCardHeader, MatCardSubtitle, MatCardTitle } from '@angular/material/card';
+import {
+  MatCard,
+  MatCardActions,
+  MatCardHeader,
+  MatCardSubtitle,
+  MatCardTitle,
+} from '@angular/material/card';
 import { MatButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 

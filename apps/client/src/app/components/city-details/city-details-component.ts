@@ -4,7 +4,14 @@ import {
   inject,
   input,
 } from '@angular/core';
-import { MatCard, MatCardActions, MatCardContent, MatCardHeader, MatCardSubtitle, MatCardTitle } from '@angular/material/card';
+import {
+  MatCard,
+  MatCardActions,
+  MatCardContent,
+  MatCardHeader,
+  MatCardSubtitle,
+  MatCardTitle,
+} from '@angular/material/card';
 import { MatIcon } from '@angular/material/icon';
 import { MatDivider, MatList, MatListItem } from '@angular/material/list';
 import { DecimalPipe } from '@angular/common';

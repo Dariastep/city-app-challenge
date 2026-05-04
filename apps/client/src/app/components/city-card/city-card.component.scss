@@ -1,5 +1,9 @@
 mat-card {
-  background: linear-gradient(135deg, rgb(163 151 213 / 0.1), rgba(64, 25, 221, 0.05));
+  background: linear-gradient(
+    135deg,
+    rgb(163 151 213 / 0.1),
+    rgba(64, 25, 221, 0.05)
+  );
   padding: 0.5rem;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }

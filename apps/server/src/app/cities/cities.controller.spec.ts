@@ -4,7 +4,7 @@ import { CitiesService } from './cities.service';
 import { City } from '@lib/models';
 
 const mockedCity: City = {
-  id:'7b686d1a-1d5d-4f1e-9c1a-1234567890ab',
+  id: '7b686d1a-1d5d-4f1e-9c1a-1234567890ab',
   name: 'Madrid',
   nameNative: 'Madrid',
   country: 'Spain',
@@ -23,12 +23,14 @@ describe('CitiesController', () => {
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       controllers: [CitiesController],
-      providers: [{
-        provide: CitiesService,
-        useValue: {
-          getCities: jest.fn()
-        }
-      }]
+      providers: [
+        {
+          provide: CitiesService,
+          useValue: {
+            getCities: jest.fn(),
+          },
+        },
+      ],
     }).compile();
 
     controller = module.get<CitiesController>(CitiesController);
@@ -41,7 +43,7 @@ describe('CitiesController', () => {
 
   it('should call getCities and return the result', async () => {
     jest.spyOn(service, 'getCities').mockResolvedValue([mockedCity]);
-    const result = await controller.getAllCities({search: 'Madrid'});
+    const result = await controller.getAllCities({ search: 'Madrid' });
     expect(result).toEqual([mockedCity]);
   });
 });

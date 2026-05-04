@@ -1,14 +1,20 @@
 <div class="city-card-container">
-<mat-card appearance="raised">
-<mat-card-header class="graded-header">
-  <div mat-card-avatar>
-    <mat-icon>location_city</mat-icon>
-  </div>
-  <mat-card-title>{{ city().name }}</mat-card-title>
-  <mat-card-subtitle>{{ city().country }}</mat-card-subtitle>
-</mat-card-header>
-<mat-card-actions align="end">
-  <button [routerLink]="['/details', city().id]" mat-stroked-button color="primary">View Details</button>
-</mat-card-actions>
-</mat-card>
+  <mat-card appearance="raised">
+    <mat-card-header class="graded-header">
+      <div mat-card-avatar>
+        <mat-icon>location_city</mat-icon>
+      </div>
+      <mat-card-title>{{ city().name }}</mat-card-title>
+      <mat-card-subtitle>{{ city().country }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-actions align="end">
+      <button
+        [routerLink]="['/details', city().id]"
+        mat-stroked-button
+        color="primary"
+      >
+        View Details
+      </button>
+    </mat-card-actions>
+  </mat-card>
 </div>

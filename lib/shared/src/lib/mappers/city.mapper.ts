@@ -9,7 +9,7 @@ import { City } from '../models/city.model';
  */
 export function mapCityRawToCity(data: CityRaw): City {
   return {
-    id:  'manual-id-' + Math.random(), // uuidv4(),
+    id: 'manual-id-' + Math.random(), // uuidv4(),
     name: data.name ?? 'unknown city',
     nameNative: data.name_native ?? data.name ?? 'unknown city',
     country: data.country ?? 'unknown country',

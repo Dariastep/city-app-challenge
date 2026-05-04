@@ -1,5 +1,9 @@
 import { inject, Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
+import {
+  HttpClient,
+  HttpErrorResponse,
+  HttpParams,
+} from '@angular/common/http';
 import { City } from '@lib/models';
 import { catchError, Observable, throwError } from 'rxjs';
 
@@ -16,7 +20,7 @@ export class CityApiService {
     }
 
     return this.httpClient
-      .get<City[]>(this.apiUrl, {params})
+      .get<City[]>(this.apiUrl, { params })
       .pipe(catchError(this.handleError));
   }
 

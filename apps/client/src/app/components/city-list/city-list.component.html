@@ -10,18 +10,18 @@
     <mat-form-field appearance="outline" class="search-field">
       <mat-label>Search...</mat-label>
       <mat-icon matPrefix>search</mat-icon>
-      <input matInput [formControl]="searchControl" placeholder="e.g. Munich">
-      <mat-hint>Try searching for cities, continents or even landmarks.</mat-hint>
+      <input matInput [formControl]="searchControl" placeholder="e.g. Munich" />
+      <mat-hint
+        >Try searching for cities, continents or even landmarks.</mat-hint
+      >
     </mat-form-field>
   </div>
 
   <div class="cities-container">
-    @for (city of cities(); track city.id)  {
-      <app-city-card [city] ="city" />
+    @for (city of cities(); track city.id) {
+      <app-city-card [city]="city" />
     } @empty {
       <p>No cities are found.</p>
     }
   </div>
 </main>
-
-

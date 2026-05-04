@@ -4,12 +4,12 @@ import { ApiPropertyOptional } from '@nestjs/swagger';
 
 export class GetCitiesFilterDto {
   @ApiPropertyOptional({
-    description: 'Search by city name, country, continent or the city landmarks',
-    example: 'Australia'
+    description:
+      'Search by city name, country, continent or the city landmarks',
+    example: 'Australia',
   })
   @IsOptional()
   @IsString()
-  @Transform(({value}) => value?.trim())
+  @Transform(({ value }) => value?.trim())
   search?: string;
 }
-

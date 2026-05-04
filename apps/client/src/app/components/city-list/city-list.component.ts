@@ -3,7 +3,12 @@ import { CommonModule } from '@angular/common';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { CityCardComponent } from '../city-card/city-card.component';
 import { CityApiService } from '../../services/city-api.service';
-import { MatFormField, MatHint, MatInput, MatLabel } from '@angular/material/input';
+import {
+  MatFormField,
+  MatHint,
+  MatInput,
+  MatLabel,
+} from '@angular/material/input';
 import { MatIcon } from '@angular/material/icon';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { debounceTime, distinctUntilChanged, startWith, switchMap } from 'rxjs';

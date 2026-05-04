@@ -39,11 +39,7 @@
       "longitude": "-3.703790",
       "population": "3223000",
       "founded": "1083",
-      "landmarks": [
-        "Royal Palace",
-        "Plaza Mayor",
-        "Plaza de Cibeles"
-      ]
+      "landmarks": ["Royal Palace", "Plaza Mayor", "Plaza de Cibeles"]
     },
     {
       "name": "Moscow",
@@ -54,11 +50,7 @@
       "longitude": "37.618423",
       "population": "11920000",
       "founded": "1147",
-      "landmarks": [
-        "Saint Basil's Cathedral",
-        "Kremlin",
-        "Bolshoi Theatre"
-      ]
+      "landmarks": ["Saint Basil's Cathedral", "Kremlin", "Bolshoi Theatre"]
     },
     {
       "name": "Tokyo",
@@ -69,11 +61,7 @@
       "longitude": "139.839478",
       "population": "13960000",
       "founded": "1603",
-      "landmarks": [
-        "Meji Shrine",
-        "Asakusa",
-        "Tokyo Skytree"
-      ]
+      "landmarks": ["Meji Shrine", "Asakusa", "Tokyo Skytree"]
     },
     {
       "name": "Lagos",
@@ -114,11 +102,7 @@
       "longitude": "11.576124",
       "population": "1472000",
       "founded": "1158",
-      "landmarks": [
-        "Bavaria statue",
-        "Marienplatz",
-        "ottonova office"
-      ]
+      "landmarks": ["Bavaria statue", "Marienplatz", "ottonova office"]
     }
   ]
 }

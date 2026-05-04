@@ -16,7 +16,7 @@ describe('CityCard', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [CityCardComponent],
-      providers: [provideRouter([])]
+      providers: [provideRouter([])],
     }).compileComponents();
 
     fixture = TestBed.createComponent(CityCardComponent);
@@ -28,7 +28,6 @@ describe('CityCard', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
 
   it('should have routerLink directive', () => {
     const el = fixture.debugElement.query(By.directive(RouterLink));
