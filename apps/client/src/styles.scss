@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+* {
+  box-sizing: border-box;
+}
+
+.list-align-center {
+  .mat-mdc-list-item {
+    align-items: center !important;
+
+    mat-icon[matListItemIcon] {
+      margin-right: 24px !important;
+    }
+  }
+}
+
+.bold {
+  font-weight: 700
+}
+
+[mat-subheader].bold {
+  margin-top: 16px !important;
+}

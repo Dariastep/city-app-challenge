@@ -1,0 +1,61 @@
+@if (city(); as cityData) {
+  <mat-card class="card-container">
+    <mat-card-header>
+      <mat-icon mat-card-avatar color="primary" aria-hidden="true">location_city</mat-icon>
+      <mat-card-title>{{ cityData.name }}</mat-card-title>
+      <mat-card-subtitle>{{ cityData.nameNative }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <mat-divider></mat-divider>
+      <div mat-subheader class="bold">General Information</div>
+      <mat-list dense class="list-align-center">
+        <mat-list-item>
+          <mat-icon matListItemIcon color="primary">public</mat-icon>
+          <div matListItemTitle class="bold">Continent</div>
+          <div matListItemLine>{{ cityData.continent }}</div>
+        </mat-list-item>
+
+        <mat-list-item>
+          <mat-icon matListItemIcon color="primary" aria-hidden="true">event_upcoming</mat-icon>
+          <div matListItemTitle class="bold">Founded</div>
+          <div matListItemLine>{{ cityData.founded }} year</div>
+        </mat-list-item>
+
+        <mat-list-item>
+          <mat-icon matListItemIcon color="primary" aria-hidden="true">groups</mat-icon>
+          <div matListItemTitle class="bold">Total Population</div>
+          <div matListItemLine>{{ cityData.population | number }} people</div>
+        </mat-list-item>
+
+        <mat-list-item>
+          <mat-icon matListItemIcon color="primary" aria-hidden="true">explore</mat-icon>
+          <div matListItemTitle class="bold">Coordinates</div>
+          <div matListItemLine>{{ cityData.latitude }} / {{ cityData.longitude }}</div>
+        </mat-list-item>
+      </mat-list>
+
+      <mat-divider></mat-divider>
+
+      <div mat-subheader class="bold">Landmarks</div>
+      <mat-list dense class="list-align-center">
+        @for (item of cityData.landmarks; track item) {
+          <mat-list-item>
+            <mat-icon matListItemIcon color="primary" aria-hidden="true">star_border</mat-icon>
+            <div matListItemTitle>{{ item }}</div>
+          </mat-list-item>
+        } @empty {
+          <div> No landmarks are shown.</div>
+        }
+      </mat-list>
+    </mat-card-content>
+
+    <mat-divider></mat-divider>
+
+    <mat-card-actions align="end">
+      <button mat-flat-button color="primary" [routerLink]="['/']">Back to all cities</button>
+    </mat-card-actions>
+  </mat-card>
+} @else {
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+}
