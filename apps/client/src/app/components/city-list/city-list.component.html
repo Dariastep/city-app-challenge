@@ -6,6 +6,15 @@
 </header>
 
 <main class="container">
+  <div class="search-wrapper">
+    <mat-form-field appearance="outline" class="search-field">
+      <mat-label>Search...</mat-label>
+      <mat-icon matPrefix>search</mat-icon>
+      <input matInput [formControl]="searchControl" placeholder="e.g. Munich">
+      <mat-hint>Try searching for cities, continents or even landmarks.</mat-hint>
+    </mat-form-field>
+  </div>
+
   <div class="cities-container">
     @for (city of cities(); track city.id)  {
       <city-card [city] ="city" />
