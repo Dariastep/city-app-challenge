@@ -1,6 +1,6 @@
-import { CityRaw } from './city-raw.model';
-import { City } from './city.model';
-import { v4 as uuidv4 } from 'uuid';
+import { CityRaw } from '../models/city-raw.model';
+import { City } from '../models/city.model';
+// import { v4 as uuidv4 } from 'uuid';
 
 /**
  * Transforms the data from the JSON file into a formatted city object
@@ -9,7 +9,7 @@ import { v4 as uuidv4 } from 'uuid';
  */
 export function mapCityRawToCity(data: CityRaw): City {
   return {
-    id: uuidv4(),
+    id:  'manual-id-' + Math.random(), // uuidv4(),
     name: data.name ?? 'unknown city',
     nameNative: data.name_native ?? data.name ?? 'unknown city',
     country: data.country ?? 'unknown country',
