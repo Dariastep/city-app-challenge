@@ -1,4 +1,4 @@
-import { City } from '@lib/shared';
+import { City } from '@lib/models';
 
 /**
  *

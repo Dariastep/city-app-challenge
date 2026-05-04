@@ -1,7 +1,9 @@
 import {
   Injectable,
   InternalServerErrorException,
-  Logger } from '@nestjs/common';
+  Logger,
+  NotFoundException,
+} from '@nestjs/common';
 import { cities } from '../../assets/data/cities.json';
 import {
   City,
@@ -31,6 +33,15 @@ export class CitiesService {
     }
   }
 
+  async getCityById(id: string): Promise<City> {
+    const found = await this.mappedCities.find(city => city.id === id);
+
+    if (!found) {
+      throw new NotFoundException(`City with the id "${id}" not found`);
+    }
+
+    return found;
+  }
 
 
 }

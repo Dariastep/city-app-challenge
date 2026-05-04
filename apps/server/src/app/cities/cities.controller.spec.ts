@@ -1,9 +1,10 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { CitiesController } from './cities.controller';
 import { CitiesService } from './cities.service';
-import { City } from '@lib/shared';
+import { City } from '@lib/models';
 
 const mockedCity: City = {
+  id:'7b686d1a-1d5d-4f1e-9c1a-1234567890ab',
   name: 'Madrid',
   nameNative: 'Madrid',
   country: 'Spain',
