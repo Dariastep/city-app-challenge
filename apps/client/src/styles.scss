@@ -1,7 +1,53 @@
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 
+:root {
+  --content-max-width: 1200px;
+}
 * {
   box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #fdfcfc;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.container {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+header {
+  background: white;
+  padding: 3rem 0;
+  border-bottom: 1px solid #e2e8f0;
+  margin-bottom: 2.5rem;
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+
+    @media (max-width: 600px) {
+      font-size: 1.8rem;
+    }
+  }
+  p {
+    color: #718096;
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+
+    @media (max-width: 600px) {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+.bold {
+  font-weight: 700
 }
 
 .list-align-center {
@@ -12,10 +58,6 @@
       margin-right: 24px !important;
     }
   }
-}
-
-.bold {
-  font-weight: 700
 }
 
 [mat-subheader].bold {
