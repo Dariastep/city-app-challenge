@@ -1,8 +1,8 @@
 <div class="city-card-container">
-  <mat-card appearance="raised">
-    <mat-card-header class="graded-header">
-      <div mat-card-avatar>
-        <mat-icon>location_city</mat-icon>
+  <mat-card appearance="raised" role="region">
+    <mat-card-header [attr.aria-labelledby]="'city-name-' + city().id">
+      <div mat-card-avatar aria-hidden="true">
+        <mat-icon aria-hidden="true">location_city</mat-icon>
       </div>
       <mat-card-title>{{ city().name }}</mat-card-title>
       <mat-card-subtitle>{{ city().country }}</mat-card-subtitle>
@@ -12,6 +12,7 @@
         [routerLink]="['/details', city().id]"
         mat-stroked-button
         color="primary"
+        [attr.aria-label]="'Card details for ' + city().name"
       >
         View Details
       </button>

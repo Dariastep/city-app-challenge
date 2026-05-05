@@ -1,16 +1,16 @@
 @if (city(); as cityData) {
 <header>
   <div class="container">
-    <h1>City Details</h1>
-    <p class="header-description">
+    <h1 id="page-title">City Details</h1>
+    <p class="header-description" id="page-description">
       Learn more about the city of {{ cityData.name }} including its history,
       population and landmarks.
     </p>
   </div>
 </header>
 
-<main>
-  <mat-card class="card-container">
+<main aria-labelledby="page-title">
+  <mat-card class="card-container" role="region">
     <mat-card-header>
       <mat-icon mat-card-avatar color="primary" aria-hidden="true"
         >location_city</mat-icon
@@ -20,11 +20,13 @@
     </mat-card-header>
 
     <mat-card-content>
-      <mat-divider></mat-divider>
+      <mat-divider role="separator"></mat-divider>
       <div mat-subheader class="bold">General Information</div>
       <mat-list dense class="list-align-center">
         <mat-list-item>
-          <mat-icon matListItemIcon color="primary">public</mat-icon>
+          <mat-icon matListItemIcon color="primary" aria-hidden="true"
+            >public</mat-icon
+          >
           <div matListItemTitle class="bold">Continent</div>
           <div matListItemLine>{{ cityData.continent }}</div>
         </mat-list-item>
@@ -56,7 +58,7 @@
         </mat-list-item>
       </mat-list>
 
-      <mat-divider></mat-divider>
+      <mat-divider role="separator"></mat-divider>
 
       <div mat-subheader class="bold">Landmarks</div>
       <mat-list dense class="list-align-center">
@@ -68,21 +70,26 @@
           <div matListItemTitle>{{ item }}</div>
         </mat-list-item>
         } @empty {
-        <div>No landmarks are shown.</div>
+        <p>No landmarks are shown.</p>
         }
       </mat-list>
     </mat-card-content>
 
-    <mat-divider></mat-divider>
+    <mat-divider role="separator"></mat-divider>
 
     <mat-card-actions align="end">
-      <button mat-flat-button color="primary" [routerLink]="['/']">
+      <button
+        mat-flat-button
+        color="primary"
+        [routerLink]="['/']"
+        aria-label="Navigate back to all cities"
+      >
         Back to all cities
       </button>
     </mat-card-actions>
   </mat-card>
 </main>
 } @else {
-<mat-progress-bar mode="indeterminate"></mat-progress-bar>
+<mat-progress-bar mode="indeterminate" aria-label="Loading"></mat-progress-bar>
 <p>Loading city details...</p>
 }

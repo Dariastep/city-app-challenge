@@ -7,20 +7,24 @@ The project is structured as a Nx monorepo.
 ## Tech Stack
 
 ### Frontend
+
 Angular, TypeScript
 
 ### Backend
+
 NestJS, Node.js, TypeScript – Shared language across backend for consistency and type safety
 
-###  API & Documentation
-REST API, Swagger (OpenAPI) 
+### API & Documentation
+
+REST API, Swagger (OpenAPI)
 
 ### Architecture
+
 Monorepo (Nx), Modular architecture (Separation of concerns (Controller → Service → Repository pattern), Shared libraries
 
 ### Development Tools
-ESLint, Prettier, Jest – Unit tests (NestJS & Angular)
 
+ESLint, Prettier, Jest – Unit tests (NestJS & Angular)
 
 ## 🚀 Quick Start
 
