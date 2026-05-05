@@ -8,6 +8,7 @@ import { cities } from '../../assets/data/cities.json';
 import { City } from '@lib/models';
 import { GetCitiesFilterDto } from './dto/get-cities-filter.dto';
 import { isMatchingQuery } from './cities.utils';
+import { mapCityRawToCity } from '@lib/shared';
 
 @Injectable()
 export class CitiesService {
